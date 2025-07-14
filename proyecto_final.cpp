@@ -25,7 +25,7 @@ struct prestamo{
 };
 
 int main(){
-    int n,op;
+    int i,nl,op;
     libro lb[20];
     string cm;
     do{
@@ -35,19 +35,17 @@ int main(){
        cout<<"2. Estado de usuarios"<<endl;
        cout<<"3. Registrar usuarios"<<endl;
        cout<<"4. Prestamos/Devoluciones"<<endl;
-       cout<<"5. Mostrar libros"<<endl;
+       cout<<"5. Buscador de libros"<<endl;
        cout<<"6. Salir"<<endl;
        cout<<"eliga la operacion a realizar"<<endl;cin>>op;
        switch(op){
         case 1:
-            cout<<"ingrese la cantidad de libros a agregar"<<endl;cin>>n;
-            for(int i=0;i<n;i++){
-                cout<<"ingrese el Id del libro"<<endl;cin>>lb[i].ID;
-                cout<<"ingrese el titulo del libro"<<endl;cin>>lb[i].titulo;
-                cout<<"ingrese el autor del libro"<<endl;cin>>lb[i].autor;
-                cout<<"ingrese el genero del libro"<<endl;cin>>lb[i].genero;
-                cout<<"ingrese la cantidad "<<endl;cin>>lb[i].stock;
-            }
+            cout<<"ingrese el Id del libro"<<endl;cin>>lb[i].ID;
+            cout<<"ingrese el titulo del libro"<<endl;cin>>lb[i].titulo;
+            cout<<"ingrese el autor del libro"<<endl;cin>>lb[i].autor;
+            cout<<"ingrese el genero del libro"<<endl;cin>>lb[i].genero;                
+            cout<<"ingrese la cantidad "<<endl;cin>>lb[i].stock;
+            nl++;
             break;
         case 2:
             break;
@@ -56,6 +54,28 @@ int main(){
         case 4:
            break;
         case 5:
+           system ("cls");
+           cout<<"5. Buscador de libro ::::::::::::::::::::::::::::::::::::"<<endl;
+           cout<<"----------------------------------------------------------"<<endl;
+           cout<<"opciones de busqueda "<<endl;
+           cout<<"1. Por ID"<<endl;
+           cout<<"2. Por autor"<<endl;
+           cout<<"3. Por genero "<<endl;
+           cout<<"4. Por titulo"<<endl;
+           cout<<"ingrese la opccion"<<endl;cin>>op;
+           switch(op){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout<<"opcion invalida"<<endl;
+                    break;
+           }
            break;
         case 6:
            cout<<"estas seguro de salir ?(si/no)"<<endl;
