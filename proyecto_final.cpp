@@ -23,9 +23,10 @@ struct prestamo{
 };
 
 int main(){
-    int i,idb,nl,op;
+    int i,idb,nl,op,opb;
     libro lb[50];
     string cm;
+    nl=0;
     do{
        system("cls");
        cout<<"Menu de opciones:::::::::::::::::::::::::::::::::::::::"<<endl;
@@ -36,16 +37,19 @@ int main(){
        cout<<"5. Buscador de libros"<<endl;
        cout<<"6. Salir"<<endl;
        cout<<"eliga la operacion a realizar"<<endl;cin>>op;
-       nl=0;
        switch(op){
         case 1:
             system ("cls");
             cout<<"1. Agregar libros::::::::::::::::::::::::::::::::::::"<<endl;
             cout<<"----------------------------------------------------------"<<endl;
             cout<<"ingrese el Id del libro"<<endl;cin>>lb[nl].ID;
-            cout<<"ingrese el titulo del libro"<<endl;cin>>lb[nl].titulo;
-            cout<<"ingrese el autor del libro"<<endl;cin>>lb[nl].autor;
-            cout<<"ingrese el genero del libro"<<endl;cin>>lb[nl].genero;                
+            cin.ignore();
+            cout<<"ingrese el titulo del libro"<<endl;
+            getline(cin,lb[nl].titulo);
+            cout<<"ingrese el autor del libro"<<endl;
+            getline(cin,lb[nl].autor);
+            cout<<"ingrese el genero del libro"<<endl;
+            getline(cin,lb[nl].genero);                
             cout<<"ingrese la cantidad "<<endl;cin>>lb[nl].stock;
             nl++;
             break;
@@ -64,16 +68,20 @@ int main(){
            cout<<"2. Por autor"<<endl;
            cout<<"3. Por genero "<<endl;
            cout<<"4. Por titulo"<<endl;
-           cout<<"ingrese la opccion"<<endl;cin>>op;
-           switch(op){
+           cout<<"ingrese la opccion"<<endl;cin>>opb;
+           switch(opb){
                 case 1:
                 cout<<"ingrese el ID del libro"<<endl;cin>>idb;
                     buscarporid(lb,idb,nl);
                     system("pause");
                     break;
                 case 2:
+                    buscarporautor(lb,nl);
+                    system("pause");
                     break;
                 case 3:
+                    buscarporgenero(lb,nl);
+                    system("pause");
                     break;
                 case 4:
                     buscarportitulo(lb,nl);
