@@ -1,4 +1,7 @@
 #include<iostream>
+#include<string>
+#include<algorithm>
+#include<cctype>
 #include "buscar_libro.h"
 using namespace std;
 
@@ -21,7 +24,7 @@ struct prestamo{
 
 int main(){
     int i,idb,nl,op;
-    libro lb[20];
+    libro lb[50];
     string cm;
     do{
        system("cls");
@@ -36,6 +39,9 @@ int main(){
        nl=0;
        switch(op){
         case 1:
+            system ("cls");
+            cout<<"1. Agregar libros::::::::::::::::::::::::::::::::::::"<<endl;
+            cout<<"----------------------------------------------------------"<<endl;
             cout<<"ingrese el Id del libro"<<endl;cin>>lb[nl].ID;
             cout<<"ingrese el titulo del libro"<<endl;cin>>lb[nl].titulo;
             cout<<"ingrese el autor del libro"<<endl;cin>>lb[nl].autor;
@@ -70,6 +76,8 @@ int main(){
                 case 3:
                     break;
                 case 4:
+                    buscarportitulo(lb,nl);
+                    system("pause");
                     break;
                 default:
                     cout<<"opcion invalida"<<endl;

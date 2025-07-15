@@ -10,7 +10,7 @@ struct libro{
     int stock;
 };
 void buscarporid(libro lb[] ,int,int);
-void buscarportitulo(libro &,int);
-void buscarporautor(libro &,int);
-void buscarporgenero(libro &,int);
+void buscarportitulo(libro lb[] ,int);
+void buscarporautor(libro lb[] ,int);
+void buscarporgenero(libro lb[] ,int);
 #endif
